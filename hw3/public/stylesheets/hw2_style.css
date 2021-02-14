@@ -1,0 +1,82 @@
+/*Author: Gabby Marshak*/
+body {
+    background-color: mistyrose;
+    text-align: center;
+    color: darkred;
+    font-family: 'Courier New', Courier, monospace;
+}
+h1, h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+img {
+    border-style: outset;
+    border-color: darkred;
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-color: darkred;
+    background-color: lightgreen;
+}
+th, td, ul{
+    border-style: solid;
+    border-color: darkred;
+    background-color: lightgreen;
+}
+ul{
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+.button {
+    background-color: darkred;
+    color: white;
+    cursor: pointer;
+}
+.filledOrder{
+    display: none;
+}
+
+.prevOrderHeader{
+    display: inline-block;
+}
+/*
+    external citation: used the hover dropdown example from w3schools as a base
+    link: https://www.w3schools.com/howto/howto_css_dropdown.asp
+*/
+.dropbtn {
+    background-color: palevioletred;
+    color: white;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 60px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    overflow-y: auto;
+    height: 80px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 5px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content a:hover {background-color: #ddd;}
+
+  .dropdown:hover .dropdown-content {display: block;}
+
+  .dropdown:hover .dropbtn {background-color: darkred;}

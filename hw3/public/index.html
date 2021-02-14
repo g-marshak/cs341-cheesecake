@@ -1,0 +1,109 @@
+<!--Author: Gabby Marshak-->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="stylesheets/hw2_style.css">
+    <title>Cheesecake Order Form</title>
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="javascripts/script.js"></script>
+</head>
+<body>
+
+    <h1>Cheesecake Order Form</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg"
+        alt="cheesecake with strawberry sauce"
+        width="200"
+        height="200">
+
+    <div class="orderForm">
+        <table>
+            <tr>
+                <!--Headers-->
+                <th>Quantity</th>
+                <th>Topping</th>
+            </tr>
+            <tr>
+                <!--dropdown menu-->
+            <td style="text-align:center">
+                <select id="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </td>
+
+                <!--radio button inputs/labels-->
+                <td style="text-align:left">
+                    <input type="radio" id="plain" name="topping" value="Plain" checked>
+                    <label for="plain">Plain</label>
+                    <br>
+                    <input type="radio" id="cherry" name="topping" value="Cherry">
+                    <label for="cherry">Cherry</label>
+                    <br>
+                    <input type="radio" id="chocolate" name="topping" value="Chocolate">
+                    <label for="chocolate">Chocolate</label>
+                </td>
+            </tr>
+        </table>
+
+        <!--notes textbox-->
+        <label for="notes">Notes:</label>
+        <br> 
+        <textarea id="notes" 
+            name="notes" 
+            rows="6" 
+            cols="30"
+            placeholder="Enter any special instructions here."></textarea>
+        <br>
+        <input type="submit" value="Order" class="button">
+    </div>
+
+    <!--shows results of completed order, hidden by default, shown when order button is clicked-->
+    <div class="filledOrder">
+        <h3>Thank you! Your order has been placed:</h3>
+        <p id="orderText"></p>
+    </div>
+
+    <!--
+        external citation: used the hover dropdown example from w3schools as a base
+        link: https://www.w3schools.com/howto/howto_css_dropdown.asp
+    -->
+
+    <!--previous orders-->
+    <h3>Orders for: 
+        <div class="dropdown">
+            <button class="dropbtn" id="monthbtn">Jan</button>
+            <div class="dropdown-content">
+            <a href="#">Jan</a>
+            <a href="#">Feb</a>
+            <a href="#">Mar</a>
+            <a href="#">Apr</a>
+            <a href="#">May</a>
+            <a href="#">Jun</a>
+            <a href="#">Jul</a>
+            <a href="#">Aug</a>
+            <a href="#">Sep</a>
+            <a href="#">Oct</a>
+            <a href="#">Nov</a>
+            <a href="#">Dec</a>
+            </div>
+        </div> 
+    </h3>
+
+    <ul>
+        <li>11 cherry</li>
+        <li>17 chocolate</li>
+        <li>31 plain</li>
+    </ul>
+
+    <!--spacing so you can get the number of orders to the middle of the screen more comfortably-->
+    <br><br><br><br><br>
+</body>
+</html>
