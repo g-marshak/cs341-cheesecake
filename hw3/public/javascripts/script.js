@@ -34,10 +34,10 @@ $(document).ready(function(){
             var chocolatenum = data[1];
             var plainnum = data[2];
 
-            alert("month: " + monthtext + "\ndata: " + datastr
+            /*alert("month: " + monthtext + "\ndata: " + datastr
                 + "\ncherrynum: " + cherrynum
                 + "\nchocolatenum: " + chocolatenum
-                + "\nplainnum: " + plainnum);
+                + "\nplainnum: " + plainnum);*/
 
 
             //change numbers based on returned json array quantities
