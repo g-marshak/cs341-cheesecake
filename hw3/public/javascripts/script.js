@@ -20,6 +20,30 @@ $(document).ready(function(){
 
      //dropdown function
      $("a").click(function(){
-        $("#monthbtn").html($(this).text());
+         //update month button text
+         var monthtext = $(this).text()
+        $("#monthbtn").html(monthtext);
+
+        //send post request
+        $.post("http://localhost:3000/orders", monthtext, function(data, status, xhr){
+            var datastr = JSON.stringify(data);
+
+            //cannot get quantities from either data or datastr 
+            //ex. data[0] returns undefined, cant get number with data[0].quantity
+            var cherrynum = data[0];
+            var chocolatenum = data[1];
+            var plainnum = data[2];
+
+            alert("month: " + monthtext + "\ndata: " + datastr
+                + "\ncherrynum: " + cherrynum
+                + "\nchocolatenum: " + chocolatenum
+                + "\nplainnum: " + plainnum);
+
+
+            //change numbers based on returned json array quantities
+            $("#cherryText").html(cherrynum + " cherry");
+            $("#chocolateText").html(chocolatenum + " chocolate");
+            $("#plainText").html(plainnum + " plain");
+        });
      });
 });
