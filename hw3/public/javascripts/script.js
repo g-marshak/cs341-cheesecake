@@ -12,6 +12,12 @@ $(document).ready(function(){
         if(stext.includes("vegan") || stext.includes("Vegan")){
             alert("Cheesecakes contain milk and eggs. Vegan options are not available.");
         }else{
+            //send post req to /neworder (inserts into db)
+            $.post("http://localhost:3000/neworder", qtext, ttext, stext, function(data, status, xhr){
+
+            });
+
+            //display order results
             $("#orderText").html(qtext + "<br>" + ttext + "<br>" + stext);
             $(".filledOrder").show();
             $(".orderForm").hide();
@@ -27,17 +33,19 @@ $(document).ready(function(){
         //send post request
         $.post("http://localhost:3000/orders", monthtext, function(data, status, xhr){
             var datastr = JSON.stringify(data);
+            var datajson = JSON.parse(data);
 
-            //cannot get quantities from either data or datastr 
+            //cannot get quantities from either data/datastr/datajson
             //ex. data[0] returns undefined, cant get number with data[0].quantity
-            var cherrynum = data[0];
-            var chocolatenum = data[1];
-            var plainnum = data[2];
+            var cherrynum = datastr[0];
+            var chocolatenum = datajson[1];
+            var plainnum = datastr[2];
 
-            /*alert("month: " + monthtext + "\ndata: " + datastr
+            alert("month: " + monthtext + "\ndatastr: " + datastr
+                + "\ndatajson: " + datajson
                 + "\ncherrynum: " + cherrynum
                 + "\nchocolatenum: " + chocolatenum
-                + "\nplainnum: " + plainnum);*/
+                + "\nplainnum: " + plainnum);
 
 
             //change numbers based on returned json array quantities
