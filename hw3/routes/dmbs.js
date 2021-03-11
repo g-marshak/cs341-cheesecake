@@ -14,8 +14,8 @@ var mysql = require('mysql'),
 
 var host = "34.83.0.92";    //from GCloud instance (change to match your db)
 var database = "CHEESECAKE";  //database name
-var user = "Gabby Marshak";         //username (change to match your db)
-var password = "1Paranormal";  //password (change to match your db, yes this is very poor practice)
+var user = "";         //username (change to match your db)
+var password = "";  //password (change to match your db, yes this is very poor practice)
 
 /**
  * dbquery
